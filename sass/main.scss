@@ -1,0 +1,398 @@
+@use './color' as *;
+@import 'animation';
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+html {
+    scroll-padding-top: 98px;
+}
+
+body {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $bg-color;
+}
+
+//stylujemy ogólnie bo będzie to zawsze tytuł każdej sekcji
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.shadow-bg {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.underline {
+    margin: 0 auto 40px;
+    height: 5px;
+    width: 70px;
+    background-color: $first-color;
+}
+
+.small-underline {
+    height: 5px;
+    width: 100%;
+    background-color: $bg-color;
+}
+
+nav {
+    text-transform: uppercase;
+    z-index: 1;
+    transition: background-color .6s;
+
+    a[class*="nav"] {
+        color: $white;
+    }
+
+    a[class*="nav"]:hover{
+        color: $first-color;
+    }
+
+    .fa-bars {
+        padding: 10px;
+        color: $white;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: $first-color;
+    }
+
+    .navbar-brand{
+        font-weight: bold;
+    }
+}
+
+
+header {
+    color: $white;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .hero-img {
+        position: relative;
+        height: 100vh;
+        background-image: url(../img/hardhat-g67cbc0713_640.jpg);
+        background-position: center;
+        background-size:cover;
+        background-attachment: fixed;
+        z-index: 0;
+    
+        .hero-shadow{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: -2;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            text-align: center;
+            height: 100%;
+            z-index: 5;
+
+            .btn-outline-light {
+                text-transform: uppercase;
+            }
+        }
+
+        .fa-chevron-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform:translateX(-50%);
+            font-size: 30px;
+            color: $white;
+        }
+    }
+}
+
+
+.aboutus {
+    i {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .aboutus-card-title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .aboutus-card-text {
+        font-size: 14px;
+    }
+
+    .aboutus-hover:hover {
+        color: $first-color;
+    }
+}
+
+.offer-section {
+    color: $light-grey;
+    background-image: url(../img/black-background_640.png);
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    i {
+        font-size: 25px;
+        margin-top: 20px; 
+        color: $light-grey;
+    }
+
+    .aboutus-offer-title {
+        font-size: 24px;
+    }
+
+}
+
+.portfolio {
+    .carousel-item {
+        position: relative;
+        height: 600px;
+    }
+    .carousel-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, .8);
+    }
+    .carousel-indicators {
+        padding-bottom:20px;
+    }
+}
+
+.prices {
+    background: $light-grey;
+
+    .price-offer {
+        .price-box {
+            width: 350px;
+            padding: 20px;
+            border: 2px solid $bg-color;
+            background: $white;
+            box-shadow: 5px 5px 5px grey;
+            transition: transform 0.4;
+            h3 {
+                font-size: 22px;
+                color: $first-color;
+                font-weight: bold;
+            }
+            p span {
+                font-weight:600;
+            }
+            button {
+                padding: 10px 20px;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+        }
+        .price-box:hover {
+            transform: scale(1.1);
+        }
+        .price-info {
+            margin-top: 20px;
+            text-align: center;
+            .price-contact {
+                text-decoration-line: none;
+            }
+        }
+    } 
+}
+
+.team {
+        position: relative;
+        background-image: url(../img/zespół/teamwork-g369d8e0e7_1920.jpg);
+        background-size:cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 0;
+
+    h2 {
+        color: $light-grey;
+    }
+    .background-shadow {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0, 0, .6);
+        z-index: -5;
+    }
+    .card-title {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    .team-section {
+        z-index: 5;
+        .team-cards {
+            .card {
+                img {
+                    height: 300px;
+                    object-fit: cover;
+                }
+                transition: transform 0.6;
+                .card-footer {
+                    font-size: 18px;
+                    color: $blue-color;
+                }
+            }
+            .card:hover {
+                transform: scale(0.9);
+            }
+        }   
+    }   
+}
+
+.achievements {
+    .achievements-items{
+        padding: 10px;
+        margin-top: 10px;
+
+        i {
+            padding: 10px;
+        }
+    
+        .achievements-number {
+            font-size: 20px;
+        }
+    
+        .achievements-text {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.contact {
+    position: relative;
+    background-image: url(../img/night-view-ga6656b751_1920.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+    background-position: center;
+    z-index: 0;
+ 
+    h2 {
+    color: $light-grey;    
+    }
+
+    .contact-us {
+        color: $white;
+        z-index: 5;
+        .contact-item {
+            margin-top: 20px;
+            h3 {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            .social-media {
+                i {
+                    padding: 10px;
+                    color: $white;
+                }
+            }
+        }
+        .contact-item-social-media {
+            align-self: center;
+        }
+    }
+    .contact-shadow {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        z-index: -5;
+    }
+}
+
+@media(min-width: 375px) {
+    header {
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }   
+    .contact-item {
+        margin-bottom: 30px;
+    } 
+}
+
+
+@media(min-width: 768px) {
+    header {
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }   
+    .portfolio {
+        .card {
+            .card-img-top {
+                height:220px;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    nav {
+        height: 88px;
+    }
+    .prices {
+        .price-offer {
+            .price-info {
+                font-size: 16px;
+            }
+        }
+    }
+    .contact {
+        .contact-item-social-media {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    header {
+        .hero-img {
+            background-image: url(../img/hardhat-g3a6733078_1280.jpg);
+        }
+
+        .aboutus {
+            .offer-section {
+                background-image: url(../img/black-background_1280.png);
+            }
+        }
+    }   
+}
+
+
+
+
